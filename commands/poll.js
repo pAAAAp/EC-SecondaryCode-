@@ -16,7 +16,7 @@ module.exports = {
     }
     const Embed = new MessageEmbed()
       .setColor(0xffc300)
-      .setTitle("📋 Poll - By @" + pollCreator)
+      .setTitle("📋 Poll - By " + pollCreator)
       .setDescription(args.slice(0).join(" "))
       .setThumbnail(message.author.avatarURL())
       .addField("Key", "👍 = Yes!\n👎 = No!");
