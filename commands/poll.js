@@ -7,7 +7,7 @@ module.exports = {
   category: "Moderation",
   args: true,
   guildOnly: true,
-  permission: "MANAGE_CHANNELS",
+  permission: "MANAGE_MESSAGES",
   execute(message, args) {
     if (message.member.nickname) {
       var pollCreator = message.member.nickname;
