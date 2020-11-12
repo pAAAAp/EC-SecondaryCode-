@@ -55,7 +55,7 @@ client.once("ready", () => {
       type: "LISTENING",
     },
     {
-      activity: "Furry YouTubers.",
+      activity: "You sleep.",
       type: "WATCHING",
     },
   ];
