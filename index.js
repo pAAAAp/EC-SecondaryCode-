@@ -8,19 +8,9 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const dbl = new DBL(process.env.DBL_TOKEN, client);
 
-let prefix = ".";
+let prefix = "//";
 
-// Firebase
-const firebase = require("firebase/app");
-const admin = require("firebase-admin");
-admin.initializeApp({
-  credential: admin.credential.cert({
-    project_id: "roboliam-427c0",
-    private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
-    client_email: process.env.FIREBASE_CLIENT_EMAIL,
-  }),
-});
-let db = admin.firestore();
+
 
 client.commands = new Discord.Collection();
 const commandFiles = fs
