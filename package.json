@@ -9,21 +9,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Controlfreak707/RoboLiam.git"
+    "url": "git+https://github.com/pAAAAp/RoboLiam.git"
   },
-  "author": "Liam The Snow Leopard#2501",
+  "author": "Alex 🗿#8135",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Controlfreak707/RoboLiam/issues"
+    "url": "https://github.com/pAAAAp/RoboLiam/issues"
   },
-  "homepage": "https://github.com/Controlfreak707/RoboLiam#readme",
+  "homepage": "https://github.com/pAAAAp/RoboLiam#readme",
   "dependencies": {
+    "@firebase/app": "^0.6.13",
     "cheerio": "^1.0.0-rc.3",
     "dblapi.js": "^2.4.1",
     "discord.js": "^12.3.1",
     "dotenv": "^8.2.0",
     "firebase": "^7.24.0",
     "firebase-admin": "^9.2.0",
+    "firebaseui": "^4.7.1",
+    "firestore": "^1.1.6",
     "node-fetch": "^2.6.1",
     "request": "^2.88.2"
   }

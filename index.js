@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 const fs = require("fs");
 const request = require("request");
 const cheerio = require("cheerio");
@@ -6,11 +6,21 @@ const fetch = require("node-fetch");
 const DBL = require("dblapi.js");
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const dbl = new DBL(process.env.DBL_TOKEN, client);
+
 
 let prefix = "//";
 
-
+// Firebase
+const firebase = require("@firebase/app");
+const admin = require("firebase-admin");
+admin.initializeApp({
+  credential: admin.credential.cert({
+    project_id: "eutopiacraftsecondary",
+    private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+    client_email: process.env.FIREBASE_CLIENT_EMAIL,
+  }),
+});
+let db = admin.firestore();
 
 client.commands = new Discord.Collection();
 const commandFiles = fs
@@ -23,7 +33,7 @@ for (const file of commandFiles) {
 }
 
 client.once("ready", () => {
-  console.log("RoboLiam is now online.");
+  console.log("EutopiaCraftSecondary is now online.");
 
   let users;
   let guilds;
@@ -31,7 +41,7 @@ client.once("ready", () => {
   client.guilds.cache.tap((coll) => (guilds = coll.size));
   const status = [
     {
-      activity: ".help | @RoboLiam",
+      activity: "//help | @EutopiaCraftSecondary",
       type: "WATCHING",
     },
     {
@@ -47,11 +57,11 @@ client.once("ready", () => {
       type: "PLAYING",
     },
     {
-      activity: "Naruto.",
+      activity: "👁👄👁",
       type: "WATCHING",
     },
     {
-      activity: "LoFi Music.",
+      activity: "To Music with bee! :)",
       type: "LISTENING",
     },
     {
